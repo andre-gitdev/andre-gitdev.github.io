@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+<link rel="canonical" href="https://andre-gitdev.github.io/" />
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Your Name — Portfolio</title>
@@ -60,7 +61,7 @@ header{
   align-items:center;
 }
 
-.profile-pic{
+.profile-pic-static{
   width:110px;
   height:110px;
   border-radius:50%;
@@ -68,13 +69,8 @@ header{
   background:linear-gradient(180deg,var(--card),var(--card2));
   backdrop-filter:blur(20px);
   box-shadow:var(--shadow);
-  position:relative;
-  overflow:hidden;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  transition:.2s;
+  object-fit:cover;
+  display:block;
 }
 
 .profile-pic:hover{
@@ -147,6 +143,23 @@ nav{
   margin-bottom:15px;
 }
 
+.seo-tags{
+  margin-top:10px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.seo-tag{
+  font-size:12px;
+  color:var(--muted);
+  padding:5px 10px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:rgba(127,127,127,.06);
+  backdrop-filter: blur(10px);
+}
+
 footer{
   text-align:center;
   margin-top:20px;
@@ -161,16 +174,20 @@ footer{
 
 <header>
   <div class="profile-area">
-    <!-- Circular Profile Upload -->
-    <label class="profile-pic" for="uploadPic" id="profileContainer">
-      <span id="uploadText">Upload<br>Photo</span>
-      <img id="profileImage" style="display:none;">
-    </label>
-    <input type="file" id="uploadPic" accept="image/*">
+<img src="assets/profile.jpg" alt="Profile photo" class="profile-pic-static">
 
     <div>
       <h1>Your Name</h1>
       <p class="subtitle">Short description about what you do.</p>
+      <div class="seo-tags" aria-label="Skills and topics">
+        <span class="seo-tag">Credit Risk</span>
+        <span class="seo-tag">Forecasting</span>
+        <span class="seo-tag">Machine Learning</span>
+        <span class="seo-tag">Python</span>
+        <span class="seo-tag">SQL</span>
+        <span class="seo-tag">SAS</span>
+        <span class="seo-tag">Data Engineering</span>
+      </div>
     </div>
   </div>
 
@@ -236,6 +253,7 @@ btn.onclick = ()=>{
 // Year
 document.getElementById("year").textContent = new Date().getFullYear();
 
+  /*
 // Profile Upload + Persist
 const uploadInput = document.getElementById("uploadPic");
 const img = document.getElementById("profileImage");
@@ -260,7 +278,9 @@ uploadInput.addEventListener("change", function(){
     localStorage.setItem("profileImage", e.target.result);
   }
   reader.readAsDataURL(file);
+
 });
+  */
 </script>
 </body>
 </html>
