@@ -145,6 +145,24 @@ nav{
   color:var(--text);
 }
 
+.section-layout{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* full-width blocks */
+.section-layout .full{
+  grid-column: 1 / -1;
+}
+
+/* responsive: stack Links + Education on mobile */
+@media (max-width: 860px){
+  .section-layout{
+    grid-template-columns: 1fr;
+  }
+}
+
 .card{
   border:1px solid var(--border);
   border-radius:18px;
@@ -208,53 +226,109 @@ footer{
 
 <nav>
   <a class="link" href="#about">About</a>
+  <a class="link" href="#links">Links</a>
+  <a class="link" href="#education">Education</a>
   <a class="link" href="#experience">Experience</a>
   <a class="link" href="#projects">Projects</a>
-  <a class="link" href="#links">Links</a>
 </nav>
 
-<section class="card" id="about">
-<h2>About</h2>
-<p>I am a data analyst looking for an opportunity in a data science role. I have strong computer programming knowledge in combination with 
+  <!-- About (full width) -->
+  <section class="card full" id="about">
+    <h2>About</h2>
+    <p>
+      I am a data analyst looking for an opportunity in a data science role. I have strong computer programming knowledge in combination with 
 experience working with large datasets that drive decision-making. <br> In my past, I have used my skills to develop machine learning models 
-and create data deliverables.</p>
+and create data deliverables.
+    </p>
 
-<!--
-<p>This section is commented out until ready.</p>
--->
-</section>
+    <!--
+    <p>This paragraph is commented out until you're ready.</p>
+    -->
+  </section>
 
-<section class="card" id="links">
-<h2>Links</h2>
+ <section class="card" id="links">
+    <h2>Links</h2>
 
-<div class="rows" style="margin-top:12px">
-  <div class="row">
-    <span>GitHub — Primary</span>
-    <a href="https://github.com/andre-gitdev" target="_blank">
-      github.com/andre-gitdev
-    </a>
-  </div>
+    <div class="rows" style="margin-top:12px">
+      <div class="row">
+        <span>GitHub — Primary</span>
+        <a href="https://github.com/andre-gitdev" target="_blank" rel="noreferrer">
+          github.com/andre-gitdev
+        </a>
+      </div>
 
-  <div class="row">
-    <span>GitHub — BU Projects</span>
-    <a href="https://github.com/andre-bu-gitdev" target="_blank">
-      github.com/andre-bu-gitdev
-    </a>
-  </div>
-</div>
-</section>
+      <div class="row">
+        <span>GitHub — BU Projects</span>
+        <a href="https://github.com/andre-bu-gitdev" target="_blank" rel="noreferrer">
+          github.com/andre-bu-gitdev
+        </a>
+      </div>
+      
+      <div class="row">
+        <span>LinkedIn</span>
+        <a href="https://www.linkedin.com/in/andreferran/" target="_blank" rel="noreferrer">linkedin.com/in/andreferran/</a>
+      </div>
+    
+    </div>
+  </section>
 
-<section class="card" id="projects">
-<h2>Projects</h2>
-<p>Showcase projects here.</p>
-</section>
+<section class="card" id="education">
+    <h2>Education</h2>
 
- /*
-<section class="card" id="links">
-<h2>Links</h2>
-<p>Add your GitHub users here.</p>
-</section>
-*/
+    <div class="rows" style="margin-top:12px">
+      <div class="proj">
+        <strong>Boston University — OMDS</strong>
+        <small>Relevant coursework: ML, statistics, modeling, data pipelines.</small>
+        <div class="meta">
+          <span class="tag">In Progress</span>
+          <span class="tag">Data Science</span>
+        </div>
+      </div>
+
+      <!--
+      <div class="proj">
+        <strong>Another Program</strong>
+        <small>Details later.</small>
+      </div>
+      -->
+    </div>
+  </section>
+
+  <!-- Experience (full width) -->
+  <section class="card full" id="experience">
+    <h2>Experience</h2>
+    <p>Add role highlights here.</p>
+
+    <div class="rows" style="margin-top:12px">
+      <div class="proj">
+        <strong>Credit Risk Analyst — Company</strong>
+        <small>Outcome-focused bullet style. What you built, what improved, what tools.</small>
+        <div class="meta">
+          <span class="tag">Python</span>
+          <span class="tag">SQL</span>
+          <span class="tag">SAS</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects (full width) -->
+  <section class="card full" id="projects">
+    <h2>Projects</h2>
+    <p>Showcase projects here.</p>
+
+    <div class="rows" style="margin-top:12px">
+      <div class="proj">
+        <strong>Project One</strong>
+        <small>1–2 lines: what it does + why it matters.</small>
+        <div class="meta">
+          <a href="https://github.com/andre-gitdev/REPO" target="_blank" rel="noreferrer">Repo</a>
+          <span class="tag">Forecasting</span>
+          <span class="tag">ML</span>
+        </div>
+      </div>
+    </div>
+  </section>
   
 <footer>
 © <span id="year"></span> Andre David Ferran
