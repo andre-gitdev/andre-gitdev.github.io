@@ -163,6 +163,116 @@ nav{
   }
 }
 
+/* --- SUBSECTION / ITEM STYLING (hierarchy inside cards) --- */
+.item{
+  border: 1px solid var(--border);
+  background: rgba(127,127,127,.06);
+  border-radius: 16px;
+  padding: 14px 14px 12px;
+  display:flex;
+  flex-direction:column;
+  gap: 10px;
+}
+
+.item-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap: 12px;
+}
+
+.item-title{
+  margin:0;
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: .01em;
+}
+
+.item-subtitle{
+  margin: 3px 0 0;
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.item-right{
+  display:flex;
+  align-items:center;
+  gap: 8px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+
+/* small “badge” */
+.badge{
+  font-size:12px;
+  color: var(--muted);
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.08);
+}
+
+/* labeled info block (e.g., Relevant coursework) */
+.label-block{
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.08);
+  border-radius: 14px;
+  padding: 10px 12px;
+}
+
+.label{
+  display:block;
+  font-size: 11.5px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  color: var(--muted);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.label-content{
+  font-size: 13.5px;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* chips row */
+.chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 8px;
+}
+
+.chip{
+  font-size: 12px;
+  color: var(--muted);
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(127,127,127,.06);
+}
+
+/* bullet list */
+.bullets{
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.55;
+  font-size: 13.5px;
+}
+
+.bullets li{ margin: 6px 0; }
+
+/* links inside items */
+.item a{
+  color: var(--accent);
+  text-decoration:none;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 13px;
+}
+.item a:hover{ text-decoration: underline; }
+
 .card{
   border:1px solid var(--border);
   border-radius:18px;
@@ -246,96 +356,196 @@ and create data deliverables.
     -->
   </section>
 
- <section class="card" id="links">
-    <h2>Links</h2>
+  <!-- LINKS -->
+<section class="card" id="links">
+  <h2>Links</h2>
 
-    <div class="rows" style="margin-top:12px">
-      <div class="row">
-        <span>GitHub — Primary</span>
-        <a href="https://github.com/andre-gitdev" target="_blank" rel="noreferrer">
-          github.com/andre-gitdev
-        </a>
+  <div class="rows" style="margin-top:12px">
+    <div class="item">
+      <div class="label-block">
+        <span class="label">GitHub — Primary</span>
+        <div class="label-content">
+          <a href="https://github.com/andre-gitdev" target="_blank" rel="noreferrer">github.com/andre-gitdev</a>
+        </div>
       </div>
 
-      <div class="row">
-        <span>GitHub — BU Projects</span>
-        <a href="https://github.com/andre-bu-gitdev" target="_blank" rel="noreferrer">
-          github.com/andre-bu-gitdev
-        </a>
+      <div class="label-block">
+        <span class="label">GitHub — BU Projects</span>
+        <div class="label-content">
+          <a href="https://github.com/andre-bu-gitdev" target="_blank" rel="noreferrer">github.com/andre-bu-gitdev</a>
+        </div>
       </div>
-      
-      <div class="row">
-        <span>LinkedIn</span>
-        <a href="https://www.linkedin.com/in/andreferran/" target="_blank" rel="noreferrer">linkedin.com/in/andreferran/</a>
+
+      <div class="label-block">
+        <span class="label">LinkedIn</span>
+        <div class="label-content">
+          <a href="https://www.linkedin.com/in/andreferran/" target="_blank" rel="noreferrer">linkedin.com/in/andreferran</a>
+        </div>
       </div>
-    
     </div>
-  </section>
-
+  </div>
+</section>
+  
+<!-- EDUCATION -->
 <section class="card" id="education">
-    <h2>Education</h2>
+  <h2>Education</h2>
 
-    <div class="rows" style="margin-top:12px">
-      <div class="proj">
-        <strong>Boston University — OMDS</strong>
-        <small>Relevant coursework: ML, statistics, modeling, data pipelines.</small>
-        <div class="meta">
-          <span class="tag">In Progress</span>
-          <span class="tag">Data Science</span>
+  <div class="rows" style="margin-top:12px">
+    <div class="item">
+      <div class="item-head">
+        <div>
+          <p class="item-title">Boston University — OMDS</p>
+          <p class="item-subtitle">
+            In Progress · Data Science · Expected: <strong>YYYY</strong>
+          </p>
+        </div>
+
+        <div class="item-right">
+          <span class="badge">Graduate</span>
         </div>
       </div>
 
-      <!--
-      <div class="proj">
-        <strong>Another Program</strong>
-        <small>Details later.</small>
+      <div class="label-block">
+        <span class="label">Relevant coursework</span>
+        <div class="label-content">
+          Machine Learning, Statistics, Modeling, Data Pipelines
+        </div>
       </div>
-      -->
+
+      <div class="chips" aria-label="Education tags">
+        <span class="chip">ML</span>
+        <span class="chip">Statistics</span>
+        <span class="chip">Pipelines</span>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Experience (full width) -->
-  <section class="card full" id="experience">
-    <h2>Experience</h2>
-    <p>Add role highlights here.</p>
+  <!-- EXPERIENCE -->
+<section class="card full" id="experience">
+  <h2>Experience</h2>
 
-    <div class="rows" style="margin-top:12px">
-      <div class="proj">
-        <strong>Credit Risk Analyst — Company</strong>
-        <small>Outcome-focused bullet style. What you built, what improved, what tools.</small>
-        <div class="meta">
-          <span class="tag">Python</span>
-          <span class="tag">SQL</span>
-          <span class="tag">SAS</span>
+  <div class="rows" style="margin-top:12px">
+    <div class="item">
+      <div class="item-head">
+        <div>
+          <p class="item-title">Credit Risk Analyst — Company</p>
+          <p class="item-subtitle">YYYY–Present · Forecasting · Risk Strategy</p>
+        </div>
+
+        <div class="item-right">
+          <span class="badge">Analytics</span>
+          <!-- Optional: location badge -->
+          <!-- <span class="badge">Remote</span> -->
+        </div>
+      </div>
+
+      <div class="label-block">
+        <span class="label">Impact</span>
+        <ul class="bullets">
+          <li>Outcome-focused bullet: what you built + business value (use numbers if you can).</li>
+          <li>Outcome-focused bullet: scale (segments, volumes, automation).</li>
+          <li>Outcome-focused bullet: stakeholders / reporting cadence / decisions enabled.</li>
+        </ul>
+      </div>
+
+      <div class="label-block">
+        <span class="label">Tools</span>
+        <div class="chips" aria-label="Tools used">
+          <span class="chip">Python</span>
+          <span class="chip">SQL</span>
+          <span class="chip">SAS</span>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- Projects (full width) -->
-  <section class="card full" id="projects">
-    <h2>Projects</h2>
-    <p>Showcase projects here.</p>
+    <!-- Duplicate another .item block per role when ready -->
+    <!--
+    <div class="item">
+      ...
+    </div>
+    -->
+  </div>
+</section>
 
-    <div class="rows" style="margin-top:12px">
-      <div class="proj">
-        <strong>Project One</strong>
-        <small>1–2 lines: what it does + why it matters.</small>
-        <div class="meta">
+  <!-- Projects -->
+<section class="card full" id="projects">
+  <h2>Projects</h2>
+
+  <div class="rows" style="margin-top:12px">
+
+    <div class="item">
+      <div class="item-head">
+        <div>
+          <p class="item-title">Project One</p>
+          <p class="item-subtitle">Forecasting / ML · Personal project</p>
+        </div>
+
+        <div class="item-right">
           <a href="https://github.com/andre-gitdev/REPO" target="_blank" rel="noreferrer">Repo</a>
-          <span class="tag">Forecasting</span>
-          <span class="tag">ML</span>
+          <!-- Optional -->
+          <!-- <a href="https://YOURDEMO.com" target="_blank" rel="noreferrer">Demo</a> -->
         </div>
       </div>
+
+      <div class="label-block">
+        <span class="label">What it does</span>
+        <div class="label-content">
+          1–2 lines: describe the project’s function and why it matters.
+        </div>
+      </div>
+
+      <div class="label-block">
+        <span class="label">Highlights</span>
+        <ul class="bullets">
+          <li>Key detail (dataset size, metrics, speedup, automation).</li>
+          <li>Key detail (model choice, evaluation approach, deployment).</li>
+        </ul>
+      </div>
+
+      <div class="chips" aria-label="Project tags">
+        <span class="chip">Forecasting</span>
+        <span class="chip">ML</span>
+        <span class="chip">Python</span>
+      </div>
     </div>
-  </section>
+
+    <div class="item">
+      <div class="item-head">
+        <div>
+          <p class="item-title">Project Two</p>
+          <p class="item-subtitle">BU coursework / notebooks</p>
+        </div>
+
+        <div class="item-right">
+          <a href="https://github.com/andre-bu-gitdev/REPO" target="_blank" rel="noreferrer">Repo</a>
+        </div>
+      </div>
+
+      <div class="label-block">
+        <span class="label">What it does</span>
+        <div class="label-content">
+          1–2 lines: what problem it solves, what you learned, what you built.
+        </div>
+      </div>
+
+      <div class="chips" aria-label="Project tags">
+        <span class="chip">Statistics</span>
+        <span class="chip">Modeling</span>
+        <span class="chip">SQL</span>
+      </div>
+    </div>
+
+  </div>
+</section>
   
 <footer>
 © <span id="year"></span> Andre David Ferran
 </footer>
 
 </div>
-
+  
+<!-- CSS -->
 <script>
 // Theme toggle
 const root = document.documentElement;
