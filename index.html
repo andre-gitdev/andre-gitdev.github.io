@@ -52,6 +52,15 @@ body{
   background:linear-gradient(180deg,var(--bg),var(--bg2));
   color:var(--text);
 }
+  
+/* About body text monospace */
+#about .about-body{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 
+               "Liberation Mono", "Courier New", monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: .01em;
+}
 
 .wrap{
   max-width:950px;
@@ -342,14 +351,18 @@ footer{
   <a class="link" href="#projects">Projects</a>
 </nav>
 
-  <!-- About (full width) -->
-  <section class="card full" id="about">
-    <h2>About</h2>
-    <p>
-      I am a data analyst looking for an opportunity in a data science role. I have strong computer programming knowledge in combination with 
-experience working with large datasets that drive decision-making. <br> In my past, I have used my skills to develop machine learning models 
-and create data deliverables.
-    </p>
+  <!-- ABOUT -->
+<section class="card full" id="about">
+  <h2>About</h2>
+
+  <p class="about-body">
+    I am a data analyst looking for an opportunity in a data science role.
+    I have strong computer programming knowledge in combination with experience
+    working with large datasets that drive decision-making.
+    In my past, I have used my skills to develop machine learning models
+    and create data deliverables.
+  </p>
+</section>
 
     <!--
     <p>This paragraph is commented out until you're ready.</p>
@@ -396,7 +409,7 @@ and create data deliverables.
         <div>
           <p class="item-title">Boston University — OMDS</p>
           <p class="item-subtitle">
-            In Progress · Data Science · Expected: <strong>YYYY</strong>
+            In Progress · Data Science · Expected: <strong>Spring 2027</strong>
           </p>
         </div>
 
@@ -430,22 +443,23 @@ and create data deliverables.
       <div class="item-head">
         <div>
           <p class="item-title">Credit Risk Analyst — Company</p>
-          <p class="item-subtitle">YYYY–Present · Forecasting · Risk Strategy</p>
+          <p class="item-subtitle">Jun 2021 - Jun 2025 · Forecasting · Risk Strategy</p>
         </div>
 
         <div class="item-right">
           <span class="badge">Analytics</span>
-          <!-- Optional: location badge -->
-          <!-- <span class="badge">Remote</span> -->
+          <span class="badge">Las Vegas</span>
         </div>
       </div>
 
       <div class="label-block">
         <span class="label">Impact</span>
         <ul class="bullets">
-          <li>Outcome-focused bullet: what you built + business value (use numbers if you can).</li>
-          <li>Outcome-focused bullet: scale (segments, volumes, automation).</li>
-          <li>Outcome-focused bullet: stakeholders / reporting cadence / decisions enabled.</li>
+          <li>Developed A/B testing for internal response/risk models to improve product strategies by 5% on a quarterly basis</li>
+          <li>Reduced default and delinquency risk across 150k+ monthly applicants with SQL/Python/SAS coding, strengthening portfolio 
+quality by 1-3%</li>
+          <li>Maintained a multiple linear regression credit risk model in SAS for forecasting monthly loss and monitoring estimated risk 
+exposure across 20+ consumer segments </li>
         </ul>
       </div>
 
@@ -477,12 +491,12 @@ and create data deliverables.
     <div class="item">
       <div class="item-head">
         <div>
-          <p class="item-title">Project One</p>
-          <p class="item-subtitle">Forecasting / ML · Personal project</p>
+          <p class="item-title">Stock Market Paper Live Trading Bot</p>
+          <p class="item-subtitle">Forecasting / Algorithmic Trading · Personal project</p>
         </div>
 
         <div class="item-right">
-          <a href="https://github.com/andre-gitdev/REPO" target="_blank" rel="noreferrer">Repo</a>
+          <a href="https://github.com/andre-gitdev/alpaca-bot" target="_blank" rel="noreferrer">Repo Link</a>
           <!-- Optional -->
           <!-- <a href="https://YOURDEMO.com" target="_blank" rel="noreferrer">Demo</a> -->
         </div>
@@ -498,40 +512,50 @@ and create data deliverables.
       <div class="label-block">
         <span class="label">Highlights</span>
         <ul class="bullets">
-          <li>Key detail (dataset size, metrics, speedup, automation).</li>
-          <li>Key detail (model choice, evaluation approach, deployment).</li>
+          <li>Built a live trading decision engine with the Python Async library to reduce manual intervention and execute trades using live 
+data during the intraday </li>
+          <li>Conducted A/B testing to compare metrics (e.g. volatility, Sortino, Sharpe, win rate, max drawdown, alpha, etc.) </li>
         </ul>
       </div>
 
       <div class="chips" aria-label="Project tags">
         <span class="chip">Forecasting</span>
+        <span class="chip">Alpaca</span>
+        <span class="chip">Deepnote / Cloud Notebook</span>
+        <span class="chip">APIs</span>
         <span class="chip">ML</span>
         <span class="chip">Python</span>
+        <span class="chip">SQL</span>
       </div>
     </div>
 
     <div class="item">
       <div class="item-head">
         <div>
-          <p class="item-title">Project Two</p>
-          <p class="item-subtitle">BU coursework / notebooks</p>
+          <p class="item-title">Short Term Rental Market Research</p>
+          <p class="item-subtitle">Data Analysis / Programming / Business Planning</p>
         </div>
 
         <div class="item-right">
-          <a href="https://github.com/andre-bu-gitdev/REPO" target="_blank" rel="noreferrer">Repo</a>
+          <a href="https://github.com/andre-gitdev/STR" target="_blank" rel="noreferrer">Repo Link</a>
         </div>
       </div>
 
       <div class="label-block">
         <span class="label">What it does</span>
         <div class="label-content">
-          1–2 lines: what problem it solves, what you learned, what you built.
+          This project uses a K-Means clustering to model price elasticity and determine optimal pricing for short-term rentals (STR) properties. The goal is to <br> reduce a 30-year mortgage loan term down to only 3 years 
+or by 89% the original time using excess cash flows.
         </div>
       </div>
 
       <div class="chips" aria-label="Project tags">
         <span class="chip">Statistics</span>
+        <span class="chip">Exploratory Data Analysis</span>
         <span class="chip">Modeling</span>
+        <span class="chip">Deepnote / Cloud Notebook</span>
+        <span class="chip">ML</span>
+        <span class="chip">Python</span>
         <span class="chip">SQL</span>
       </div>
     </div>
